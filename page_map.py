@@ -4,7 +4,7 @@ import geopandas as gpd # / GeoPandas
 st.set_page_config(layout="wide")
 st.title("Leafmap + GeoPandas")
 
-url="/workspaces/streamlit-gisdemo-app/hospital.zip"
+url="hospital.zip"
 gdf=gpd.read_file(url)
 st.dataframe(gdf.head())
 
