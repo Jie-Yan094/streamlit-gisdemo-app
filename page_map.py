@@ -1,6 +1,9 @@
 import streamlit as st
 import leafmap.foliumap as leafmap
 import geopandas as gpd # / GeoPandas
+
+option = st.selectbox("請選擇底圖",("OpenTopoMap","Esri.EorldImagery","CartoDB.DarkMatter"))
+
 st.set_page_config(layout="wide")
 st.title("Leafmap + GeoPandas")
 
@@ -10,6 +13,7 @@ st.dataframe(gdf.head())
 
 #-2.建立地圖
 m=leafmap.Map(center=[0, 0])
+m.add_basemap(option)
 #-3.將 GeoDataFrame 加入地圖
 #使用 add_gdf() 方法
 m.add_gdf(
@@ -20,5 +24,6 @@ m.add_gdf(
 )
 #加入圖層控制器(右上角)
 m.add_layer_control()
+
 #-4.顯示地圖
 m.to_streamlit(height=700)
