@@ -19,6 +19,6 @@ m.add_gdf(
     highlight=False
 )
 #加入圖層控制器(右上角)
-m.add_Jayer_control()
+m.add_layer_control()
 #-4.顯示地圖
 m.to_streamlit(height=700)
