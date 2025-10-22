@@ -2,27 +2,23 @@ import streamlit as st
 import leafmap.foliumap as leafmap
 import geopandas as gpd # / GeoPandas
 st.set_page_config(layout="wide")
-st.title("Leafmap + GeoPandas (Uß)")
-# --- 1. o GeoPandas × ---
-# o Natural Earth 110m cultural vectors ö .zip þ
-url ="https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip"
-# GeoPandas ÿïß URL × .zip þ
-gdf = gpd.read_file(url)
-# (o) ovrß
+st.title("Leafmap + GeoPandas")
+
+url="/workspaces/streamlit-gisdemo-app/hospital.zip"
+gdf=gpd.read_file(url)
 st.dataframe(gdf.head())
-# --- 2. W ---
-m = leafmap.Map(center=[0, 0])
-# --- 3.  GeoDataFrame à/W ---
-# o add_gdf() 
+
+#-2.建立地圖
+m=leafmap.Map(center=[0, 0])
+#-3.將 GeoDataFrame 加入地圖
+#使用 add_gdf() 方法
 m.add_gdf(
-gdf,
-layer_name="_} (Vector)",
-style={"fillOpacity": 0, "color": "black", "weight": 0.5}, # ún}
-# highlight=False ößoÿ
-# n<\=¿o/ó(Tooltip)öù
-highlight=False
+    gdf,
+    layer_name="醫院",
+    style={"fill Opacity": 0, "color":"black", "weight":0.5}, #設為透明,只留邊界
+    highlight=False
 )
-# à/Wv (óN¿)
-m.add_layer_control()
-# --- 4. W ---
+#加入圖層控制器(右上角)
+m.add_Jayer_control()
+#-4.顯示地圖
 m.to_streamlit(height=700)
