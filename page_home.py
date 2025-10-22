@@ -7,6 +7,5 @@ video_url = "https://i.imgur.com/1GoAB0C.mp4"
 st.write(f"正在播放影片:(video_url)")
 st.video(video_url)
 #直接將照片的URL 傳給 
-st.image() 
 image_url = "https://i.imgur.com/uf1T4ND.png" 
 st.image(image_url)
