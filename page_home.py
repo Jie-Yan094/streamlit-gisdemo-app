@@ -1,11 +1,9 @@
 import streamlit as st
-# ó¿¿öw
-st.title("Ïsö GIS \ÿ")
-st.write("o/[o Streamlit ö×_Wo_")
-#  MP4 ö URL ó st.video()
+#這裡放所有您想在首頁顯示的內容 
+st.title("歡迎來到我的GIS 專案!") 
+st.write("這是一個使用 Streamlit 建立的互動式地圖應用程式。")
+#直接將 MP4 影片的URL 傳給st.video()
 video_url = "https://i.imgur.com/1GoAB0C.mp4"
-st.write(f"kÿ {video_url}")
+st.write(f"正在播放影片:(video_url)")
 st.video(video_url)
-#  wö URL ó st.image()
-image_url = "https://i.imgur.com/uf1T4ND.png"
-st.image(image_url)
+#直接將照片的URL 傳給 st.image() image_url = "https://i.imgur.com/uf1T4ND.png" st.image(Image_url)
